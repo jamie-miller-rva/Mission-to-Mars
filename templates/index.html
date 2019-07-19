@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+
+  <!-- Links to Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+
+  <!-- Mars News Data -->
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>Source: [NASA Mars News Site](https://mars.nasa.gov/news/) 
+      </p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Headlines for Mars!</a></p>
+    </div>
+#     <img src="{{  }}" alt="">
+    <h2>The latest new headline for Mars is:</h2>
+    <h3>: {{mars_news_dict.news_title}}</h3>
+    <h3>: {{mars_news_dict.news_paragraph}}</h3>
+  </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer">Analysis Conducted: July 2019 - Lead Analyst: Jamie Miller</div>
+  </footer>
+
+</body>
+
+</html>
