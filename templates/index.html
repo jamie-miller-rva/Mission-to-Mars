@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="author" content="Jamie Miller">
+  <meta name="description" content="An example web-scraping project using 
+      BeautifulSoup and splinter to scrape multiple NASA websites for 
+      current informaiton about Mars, save that information in a MongoDB collection
+      and serve up that information on a local server using HTML, CSS and Bootstrap templates.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
@@ -66,7 +71,7 @@
 
               <!-- Mars Facts Table -->  
               <h4>Mars Facts</h4>
-              <p>{{ mars_data.mars_facts | safe }}</p> <!-- example used elsewhere - lookup the meaning of | safe -->
+              <p>{{ mars_data.mars_facts | safe}}</p> <!-- example used elsewhere - lookup the meaning of | safe -->
             </div>
           </div>
 
@@ -79,40 +84,40 @@
                 <div class="col-md-6 hemispheres">
                   <div class="panel panel-default">
                     <div class="panel-header">
-                      <img src = {{ mars_data.hemisphere_title_and_image_urls[0].url_img}} width="100%">
+                      <img src = {{ mars_data.hemispheres_title_and_image[0].url_image}} width="100%">
                     </div>
                     <div class="panel-body hemisphere-titles">
-                      <h4>{{ mars_data.hemisphere_title_and_image_urls[0].title }}</h4>
+                      <h4>{{ mars_data.hemispheres_title_and_image[0].title }}</h4>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 hemispheres">
                   <div class="panel panel-default">
                     <div class="panel-header">
-                      <img src = {{ mars_data.hemisphere_title_and_image_urls[1].url_img}} width="100%">
+                      <img src = {{ mars_data.hemispheres_title_and_image[1].url_image}} width="100%">
                     </div>
                     <div class="panel-body hemisphere-titles">
-                      <h4>{{ mars_data.hemisphere_title_and_image_urls[1].title }}</h4>
+                      <h4>{{ mars_data.hemispheres_title_and_image[1].title }}</h4>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 hemispheres">
                   <div class="panel panel-default">
                     <div class="panel-header">
-                      <img src = {{ mars_data.hemisphere_title_and_image_urls[2].url_img}} width="100%">
+                      <img src = {{ mars_data.hemispheres_title_and_image[2].url_image}} width="100%">
                     </div>
                     <div class="panel-body hemisphere-titles">
-                      <h4>{{ mars_data.hemisphere_title_and_image_urls[2].title }}</h4>
+                      <h4>{{ mars_data.hemispheres_title_and_image[2].title }}</h4>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 hemispheres">
                   <div class="panel panel-default">
                     <div class="panel-header">
-                      <img src = {{ mars_data.hemisphere_title_and_image_urls[3].url_img}} width="100%">
+                      <img src = {{ mars_data.hemispheres_title_and_image[3].url_image}} width="100%">
                     </div>
                     <div class="panel-body hemisphere-titles">
-                      <h4>{{ mars_data.hemisphere_title_and_image_urls[3].title }}</h4>
+                      <h4>{{ mars_data.hemispheres_title_and_image[3].title }}</h4>
                     </div>
                   </div>
                 </div>

@@ -83,20 +83,20 @@ def scrape():
 
     # Mars Facts Table
     mars_facts_url = 'https://space-facts.com/mars/'
-    mars_facts_table = pd.read_html(mars_facts_url)   # removed earlier used ,index_col=0, flavor=['lxml', 'bs4'])    
-    Mars_Facts_df = mars_facts_table[1] # Create pandas DataFrame for second table containing just "Mars" 
+    mars_facts_table = pd.read_html(mars_facts_url)   
+    Mars_Facts_df = mars_facts_table[1] # Create pandas DataFrame for second table containing just "Mars" Facts 
     
     # Cleanup the table
-    Mars_Facts_df.rename({1:"Mars Facts"}, axis=1, inplace=True)
-    Mars_Facts_df.set_index("Mars Facts", inplace=True)    
+    Mars_Facts_df.columns = ["", "MARS PLANET PROFILE"]
+    Mars_Facts_df.set_index("MARS PLANET PROFILE", inplace=True)       
  
     #Convert the data to a HTML table string.
-    Mars_facts = Mars_Facts_df.to_html()
-    Mars_facts.replace("\n", "")
+    mars_facts = Mars_Facts_df.to_html()
+    mars_facts.replace("\n","")    
     Mars_Facts_df.to_html('mars_facts.html')
 
     # Store html file in dictionary
-    Mars_info_dict['mars_facts'] = Mars_facts
+    Mars_info_dict['mars_facts'] = mars_facts
 
     #--------------------------------------------------------------
     # 4: Scrape the NASA Jet Propulsion Laboratory site
@@ -175,7 +175,7 @@ def scrape():
     # Add hemispheres_title_and_image list to Mars_info_dict
     Mars_info_dict['hemispheres_title_and_image'] = hemispheres_title_and_image
 
-    # browser.quit() used but did not see any changes
+    browser.quit()
 
     return Mars_info_dict # return scraped info in Mars_info_dict to the scraped app/function in app.py
 
